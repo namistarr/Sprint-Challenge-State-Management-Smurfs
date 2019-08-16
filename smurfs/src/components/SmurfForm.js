@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { getSmurfs, postSmurfs } from '../actions';
+import { postSmurfs } from '../actions';
 
 const SmurfForm = (props) => {
     const [newSmurf, setNewSmurf] = useState({
         name: '',
-        age: null,
+        age: 0,
         height: ''
     });
 
     const handleSubmit = (event) => {
         event.preventDefault();
         props.postSmurfs(newSmurf);
-        props.getSmurfs(props.smurfs);
     }
 
     const handleChange  = (event) => {
@@ -55,4 +54,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getSmurfs, postSmurfs })(SmurfForm);
+export default connect(mapStateToProps, { postSmurfs })(SmurfForm);
