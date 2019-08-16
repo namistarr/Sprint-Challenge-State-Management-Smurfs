@@ -4,10 +4,13 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+import smurfReducer from './reducers';
+
 import "./index.css";
 import App from "./components/App";
 
-const store = createStore({}, applyMiddleware(thunk));
+
+const store = createStore(smurfReducer, applyMiddleware(thunk));
 
 
 ReactDOM.render(

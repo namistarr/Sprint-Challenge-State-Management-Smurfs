@@ -18,6 +18,7 @@ function smurfReducer(state = initialState, action) {
         case FETCH_SMURFS_SUCCESS: 
             return {
                 ...state,
+                smurfs: action.payload,
                 error: ''
             }
         case FETCH_SMURFS_FAILURE:
